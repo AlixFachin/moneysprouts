@@ -164,6 +164,13 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  /* Gradients fallback if the viewport is bigger than the ap (e.g. iPad)  */
+  background: #11998e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #DFF106, #63A50A);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #DFF106, #63A50A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 h2 {
@@ -177,7 +184,7 @@ button:active {
 }
 
 #app {
-  --app-max-width: 800px;
+  --app-max-width: 500px;
   --header-color: #d7efbd;
 
   /* Variable calculation for positioning */
@@ -225,7 +232,7 @@ button:active {
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(2px);
-  min-width: 90%;
+  /* min-width: 90%; */
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 40px;

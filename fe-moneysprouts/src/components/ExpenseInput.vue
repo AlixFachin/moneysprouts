@@ -164,7 +164,7 @@ export default {
     const currentDate = new Date();
     this.$data.posts.date = `${currentDate.getFullYear()}-${display2Digits(
       currentDate.getMonth() + 1
-    )}-${display2Digits(currentDate.getDay())}`;
+    )}-${display2Digits(currentDate.getDate())}`;
   },
   data() {
     return {

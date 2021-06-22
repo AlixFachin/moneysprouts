@@ -63,6 +63,16 @@ export default {
   padding: 40px;
   width: 400px;
   height: 400px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 450px) {
+  .login-container {
+    border-radius: 100px;
+    width: 90%;
+    height: auto;
+    padding: 5px;
+  }
 }
 
 input {
@@ -70,6 +80,7 @@ input {
   height: 2em;
   font-size: large;
   filter: none;
+  width: 60%;
 }
 
 .green-emphasis {
@@ -82,9 +93,10 @@ button {
   border-radius: 5px;
   background-color: #403d58;
   color: white;
-  width: 75%;
+  width: 70%;
   margin-left: 5px;
   margin-right: 5px;
+  margin-bottom: 1em;
 }
 
 h2 {
@@ -98,7 +110,9 @@ h2 {
 
 .button-row {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
 }
 </style>
