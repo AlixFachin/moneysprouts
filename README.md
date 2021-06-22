@@ -1,27 +1,66 @@
 # MoneySprouts
 
-**Get in the black, by going green!**
-MoneySprouts is a progressive web app that helps its users to save money and accomplish their personal environmental goals at the same time.
+## Background 🦋
+This full-stack app was realized during a four-week long team sprint during the immersive coding bootcamp at
+[Code Chrysalis](https://www.codechrysalis.io)
+
+## Summary
+
+🪴🌱🪴🌱🪴🌱🪴🌱🪴🌱
+
+**Get in the black, by going green!** 
+
+🪴🌱🪴🌱🪴🌱🪴🌱🪴🌱
+
+MoneySprouts is a progressive web app that helps its users to **save money** and **remind them to accomplish their personal environmental goals** at the same time.
 
 ### Current Features Include:
-* Environmental facts
-* Monthly budget setting
-* Monthly savings target setting
-* Expense input
-* Eco-action input
+* Environmental facts reminder 🌲
+* Monthly budget setting 💰
+* Monthly savings target setting 💸
+* Expense input 🙈
+* Eco-action input 🏅
 
-## Team members
+## Links
+* This app was part of a public presentation streamed live [on Youtube](https://www.youtube.com/watch?v=522BJezfQ5Y) on June 17th 2021. (Presentation starts at 52:59)
+* The app is released on AWS at the following link: [MoneySprouts](https://www.moneysprouts.net/)
 
-* [Alix](https://github.com/AlixFachin)
-* [David](https://github.com/DavidofOrange)
-* [Julie](https://github.com/dawndarkness)
-* [Michael](https://github.com/michael-metcalf)
-* [Russell](https://github.com/RussellPacheco)
+![app demonstration](moneysproutsdemo.gif)
+
+## Tech Stack 🧑‍🔬
+### Front-end 📲
+* The front-end was designed with [Vue.js](https://vuejs.org/) and [VueX](https://vuex.vuejs.org/)
+* The charts are based on [Chart.js](https://www.chartjs.org/) and [VueChart.js](https://vue-chartjs.org/)
+
+### Back-end 📂
+* The back-end database is using [PostgreSQL](https://www.postgresql.org/)
+* The back-end API server is based on **Python**, with [Flask](https://pypi.org/project/Flask/) framework for API, and [SQLAlchemy](https://www.sqlalchemy.org/) for DB interaction.
+* In production, we are using the following tech:
+    * [Gunicorn](https://gunicorn.org/) for WSGI server
+    * [NGINX](https://nginx.org/en/) for reverse proxy load balancing and static files servicing
+* The app was deployed on AWS EC2
+
+## Team members 👱👱👩🧑‍🦱👱
+
+| Staff name | Role |
+| ---------- | -------- |
+| [Michael](https://github.com/michael-metcalf) | Tech lead, front-end |
+| [Alix](https://github.com/AlixFachin) | Full-stack | 
+| [David](https://github.com/DavidofOrange) | Full-stack |
+| [Julie](https://github.com/dawndarkness) | Front-end |
+| [Russell](https://github.com/RussellPacheco) | Full-stack |
+
+## Future Features
+The future features are listed on the Github repo in the "Issues" section.
 
 
-# Getting Up and Running 
+# Getting the app Up and Running on local environment 🏃
+In order to run the app on a local machine, you need to:
+1. download / clone the repository
+1. run the back-end server with the proper Python configuration (more details below)
+1. run the front-end development server after having installed the required libraries and dependencies
 
-## The Backend Environment
+## The Backend Environment 
 
 1. Clone Repo
 
