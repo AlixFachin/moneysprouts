@@ -100,7 +100,7 @@ export default new Vuex.Store({
     setCategoriesList(state, payload) {
       state.categoriesList = payload.categoriesList;
     },
-  }, 
+  },
   actions: {
     async verifyLogin({ commit, dispatch }, payload) {
       try {

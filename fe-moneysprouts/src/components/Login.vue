@@ -64,7 +64,19 @@ export default {
   width: 400px;
   height: 400px;
   box-sizing: border-box;
+
+  animation: panel-appear 0.8s cubic-bezier(0.28, 0.19, 0.68, 2.19);
 }
+
+@keyframes panel-appear {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
 
 @media (max-width: 450px) {
   .login-container {
@@ -84,7 +96,21 @@ input {
 }
 
 .green-emphasis {
-  color: rgb(40, 87, 76);
+  color: hsl(166, 37%, 10%);
+  animation-name: color-flicker;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: linear;
+}
+
+@keyframes color-flicker {
+  0% {
+    color: hsl(166, 37%, 10%);
+  }
+  100% {
+    color: hsl(166, 37%, 50%);
+  }
 }
 
 button {

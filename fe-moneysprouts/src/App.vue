@@ -1,9 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" v-bind:class="{ jsLoading: isLoading }">
+    <img
+      src="@/assets/green-palmtree.jpg"
+      v-if="this.isLoading"
+      @load="allowAnimations"
+      width="5px"
+    />
     <div class="header">
       <h1 id="moneySproutsTitle">MoneySprouts</h1>
+      <MainAnimation />
     </div>
-    <div class="glass">
+    <div>
       <div v-bind:class="mainPanelClass">
         <!-- we display the LOGIN component if no user is currently active -->
         <user-message-display />
@@ -76,6 +83,7 @@ import BudgetInput from "./components/BudgetInput.vue";
 import UserMessageDisplay from "./components/UserMessageDisplay";
 import BarChartScreen from "./components/BarChartScreen.vue";
 import SignUp from "./components/SignUp.vue";
+import MainAnimation from "./components/mainAnimation.vue";
 
 export default {
   name: "App",
@@ -94,6 +102,11 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
     ],
   },
+  data() {
+    return {
+      isLoading: true,
+    };
+  },
   components: {
     Login,
     BudgetVisualization,
@@ -102,6 +115,7 @@ export default {
     UserMessageDisplay,
     BarChartScreen,
     SignUp,
+    MainAnimation,
   },
   methods: {
     showBudgetVisualization() {
@@ -128,6 +142,14 @@ export default {
       this.$store.commit("clearUserName");
       this.$store.commit("setShowsToFalse");
       this.$store.commit("showLogin");
+    },
+    allowAnimations() {
+      // Once the App is mounted (=loaded???) then we can start the animations
+      console.log("Document loaded!");
+      setTimeout(() => {
+        console.log("Baoum");
+        this.isLoading = false;
+      }, 500);
     },
   },
   mounted() {
@@ -166,11 +188,26 @@ body {
   padding: 0;
   /* Gradients fallback if the viewport is bigger than the ap (e.g. iPad)  */
   background: #11998e; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #DFF106, #63A50A);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #DFF106, #63A50A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #dff106,
+    #63a50a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #dff106,
+    #63a50a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/*  Pause animations while we load the pictures */
+.jsLoading *,
+.jsLoading *:before,
+.jsLoading *:after {
+  animation-play-state: paused !important;
 }
 
 h1 h2 {
@@ -248,7 +285,9 @@ button:active {
   height: var(--header-footer-height);
   background-color: var(--header-color);
   display: flex; /* header has a flex display in order to center the title vertically */
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   z-index: 5;
 }
 
