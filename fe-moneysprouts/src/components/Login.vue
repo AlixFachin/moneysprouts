@@ -64,7 +64,7 @@ export default {
   width: 400px;
   height: 400px;
   box-sizing: border-box;
-
+  
   animation: panel-appear 0.8s cubic-bezier(0.28, 0.19, 0.68, 2.19);
 }
 
@@ -77,6 +77,12 @@ export default {
   }
 }
 
+#login-background {
+  width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 
+}
 
 @media (max-width: 450px) {
   .login-container {

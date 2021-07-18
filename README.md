@@ -169,6 +169,25 @@ npm run lint
 ### Customize configuration
 See Vue CLI [Configuration Reference](https://cli.vuejs.org/config/).
 
+## About deployment on AWS
+
+To deploy in prod, we need to have a proper HTTPS server, which will be `nginx`.
+`Ngninx` will be serving the static files (e.g. the `Vue` app) and will communicate with Python for the API, 
+enabling the front-end to discuss with the back-end.
+
+However `Nginx` and Python don't know how to speak together, so we need to put a server in the middle, which 
+will be `gunicorn`.
+
+## How to setup and restart nginx
+We need to restart nginx server each time we make some changes to the server config files or to the back-end.
+* The server config file is in the `/etc/nginx/sites-enabled` folder.
+* There is another config file in the `/etc/nginx/sites-available` folder. As this second file is the same than 
+the file above, we created a symbolic link to, well, link both files so that only the file in `sites-enabled` have
+to be modified.
+* To restart `nginx` (after having modified the conf.d file, for example) we just need to run `sudo systemctl restart nginx`
+* To see the current status of `nginx`, we can do `service nginx status`
+
+
 ## Credits
 
 * Icons were created using [font awesome](https://fontawesome.com/)

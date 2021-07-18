@@ -1,11 +1,11 @@
 <template>
   <div id="app" v-bind:class="{ jsLoading: isLoading }">
-    <img
+    <!-- <img
       src="@/assets/green-palmtree.jpg"
       v-if="this.isLoading"
       @load="allowAnimations"
       width="5px"
-    />
+    /> -->
     <div class="header">
       <h1 id="moneySproutsTitle">MoneySprouts</h1>
       <MainAnimation />
@@ -152,11 +152,12 @@ export default {
     },
     allowAnimations() {
       // Once the App is mounted (=loaded???) then we can start the animations
-      console.log("Document loaded!");
+      /* console.log("Document loaded!");
       setTimeout(() => {
         console.log("Baoum");
         this.isLoading = false;
-      }, 500);
+      }, 0); */
+      this.isLoading = false;
     },
   },
   mounted() {
@@ -211,11 +212,11 @@ body {
 }
 
 /*  Pause animations while we load the pictures */
-.jsLoading *,
+/* .jsLoading *,
 .jsLoading *:before,
 .jsLoading *:after {
   animation-play-state: paused !important;
-}
+} */
 
 h1 h2 {
   font-family: "Carme", sans-serif;
