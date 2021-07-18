@@ -77,13 +77,20 @@
 
 <script>
 import Login from "./components/Login.vue";
-import BudgetVisualization from "./components/BudgetVisualization.vue";
-import ExpenseInput from "./components/ExpenseInput.vue";
-import BudgetInput from "./components/BudgetInput.vue";
-import UserMessageDisplay from "./components/UserMessageDisplay";
-import BarChartScreen from "./components/BarChartScreen.vue";
 import SignUp from "./components/SignUp.vue";
 import MainAnimation from "./components/mainAnimation.vue";
+import UserMessageDisplay from "./components/UserMessageDisplay";
+/* DYNAMIC COMPONENT LOADING  */
+/*
+import ExpenseInput from "./components/ExpenseInput.vue";
+import BudgetInput from "./components/BudgetInput.vue";
+import BarChartScreen from "./components/BarChartScreen.vue";
+*/
+/* LAZY COMPONENT LOADING */
+const BudgetVisualization = () => import(/* webpackChunkName: "BudgetVisualization" */ "@/components/BudgetVisualization.vue");
+const ExpenseInput = () => import(/* webpackChunkName: "ExpenseInput" */ "@/components/ExpenseInput.vue");
+const BudgetInput = () => import( /* webpackChunkName: "BudgetInput" */ "@/components/BudgetInput.vue");
+const BarChartScreen = () => import(/* webpackChunkName: "BarChartScreen" */ "@/components/BarChartScreen.vue");
 
 export default {
   name: "App",
