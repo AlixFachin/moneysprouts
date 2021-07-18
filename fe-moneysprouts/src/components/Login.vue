@@ -65,7 +65,7 @@ export default {
   height: 400px;
   box-sizing: border-box;
   
-  animation: panel-appear 0.8s cubic-bezier(0.28, 0.19, 0.68, 2.19);
+  animation: panel-appear 0.4s cubic-bezier(0.28, 0.19, 0.68, 2.19);
 }
 
 @keyframes panel-appear {
@@ -75,13 +75,6 @@ export default {
   to {
     transform: scale(1);
   }
-}
-
-#login-background {
-  width: 400px;
-  height: 400px;
-  position: fixed;
-  top: 
 }
 
 @media (max-width: 450px) {
